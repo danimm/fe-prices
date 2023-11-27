@@ -1,14 +1,10 @@
-import {randomUUID} from "crypto";
+import { randomUUID } from "crypto";
+import { Price } from "~/types/price";
 import randomNumber from "~/utils/randomNumber";
-
-interface Prices {
-    id: string
-    amount: number
-}
 
 export default defineEventHandler(async event => {
   return [
       { id: randomUUID(), amount: randomNumber() },
       { id: randomUUID(), amount: randomNumber() },
-  ] as Prices[]
+  ] as Price[]
 })
